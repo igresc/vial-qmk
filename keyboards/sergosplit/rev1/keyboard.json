@@ -1,0 +1,29 @@
+{
+    "manufacturer": "igresc",
+    "keyboard_name": "SergoSplit",
+    "processor": "atmega32u4",
+    "bootloader": "caterina",
+    "debounce": 5,
+    "diode_direction": "COL2ROW",
+    "keyboard": "sergosplit/rev1",
+    "keymap": "vial",
+    "layout": "LAYOUT_orthocustom",
+    "split": {
+        "enabled": true,
+        "serial": {
+            "pin": "D1"
+        },
+        "usb_detect": {
+            "enabled": true
+        }
+    },
+    "tapping": {
+        "term": 200,
+        "toggle": 2
+    },
+    "usb": {
+        "device_version": "0.0.1",
+        "pid": "0x3060",
+        "vid": "0xFEED"
+    }
+}

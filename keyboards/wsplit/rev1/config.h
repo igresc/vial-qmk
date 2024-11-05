@@ -18,13 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x3060
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    igresc
-#define PRODUCT         SergoSplit
-
 /* key matrix size */
 // Rows are doubled-up
 #define MATRIX_ROWS 12
@@ -34,17 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROW_PINS { F4, F5, F6, F7, B1, B3 }
 #define MATRIX_COL_PINS { D3, D2, D4, C6, E6, B4, B5}
 
-#define DIODE_DIRECTION COL2ROW
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
-
-/* serial.c configuration for split keyboard */
-// #define SOFT_SERIAL_PIN D0
-#define SOFT_SERIAL_PIN D1
-
 // FUNCIONA!!!!!!! Needed for clone pro micro to work with split setup
-#define SPLIT_USB_DETECT
+//#define SPLIT_USB_DETECT
 
 /* Select hand configuration */
 #define MASTER_LEFT
@@ -65,25 +49,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
 )
 
-#define BOOTMAGIC_ROW 0
-#define BOOTMAGIC_COLUMN 0
 
 /* ws2812 RGB LED */
-// #define RGB_DI_PIN D7
-// #define RGBLED_NUM 14   // Number of LEDs
+#define WS2812_DI_PIN D7
+#define RGBLED_NUM 14   // Number of LEDs
 // // #define RGBLIGHT_LIMIT_VAL 128
-// #define RGBLIGHT_ANIMATIONS
-// #define RGBLIGHT_SPLIT
-// #define RGBLIGHT_SLEEP
-// #define RGBLED_SPLIT { 7, 7 }
-// #define RGBLIGHT_LAYERS
-// #define RGBLIGHT_LED_MAP { 0, 1, 2, 3, 4, 5, 6, 13, 12, 11, 10, 9, 8, 7}
+#define RGBLIGHT_SPLIT
+#define RGBLIGHT_SLEEP
+#define RGBLED_SPLIT { 7, 7 }
+#define RGBLIGHT_LAYERS
+#define RGBLIGHT_LED_MAP { 0, 1, 2, 3, 4, 5, 6, 13, 12, 11, 10, 9, 8, 7}
+#define RGBLIGHT_MAX_LAYERS 4
 
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_MODS_ENABLE
 
-#define TAPPING_TERM 200
-#define TAPPING_TOGGLE 2
 // Prevent normal rollover on alphas from accidentally triggering mods.
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 // #define TAPPING_FORCE_HOLD
@@ -107,3 +87,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NO_ACTION_LAYER
 // #define NO_ACTION_TAPPING
 // #define NO_ACTION_ONESHOT
+
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+#define LAYER_STATE_8BIT
